@@ -1,6 +1,4 @@
 @import 'tailwindcss';
-
-@plugin 'tailwindcss-animate';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
@@ -94,7 +92,7 @@
         Roboto, sans-serif;
     --radius: 0.625rem;
     --background: #fff3e5;
-    --foreground: #f8f8f7;
+    --foreground: #000000;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
@@ -106,7 +104,7 @@
     --muted: #9d9d9d;
     --muted-foreground: oklch(0.556 0 0);
     --accent: #407c59;
-    --accent-foreground: oklch(0.205 0 0);
+    --accent-foreground: #000000;
     --destructive: oklch(0.577 0.245 27.325);
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
@@ -209,7 +207,11 @@ body {
         @apply border-border outline-ring/50;
     }
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-accent-foreground;
+    }
+
+    a {
+        @apply text-foreground hover:text-accent-foreground hover:underline;
     }
 
     p {
@@ -217,7 +219,7 @@ body {
     }
 
     h1 {
-        @apply text-5xl font-bold leading-[1.2];
+        @apply text-5xl font-bold leading-[1.2] text-primary;
     }
 
     h2 {
@@ -225,14 +227,12 @@ body {
     }
 
     h3 {
-        @apply text-2xl font-bold leading[1.2];
+        @apply text-2xl font-bold leading-[1.2];
     }
+}
 
-    ul {
-        @apply list-disc list-inside;
-    }
-
-    li {
-        @apply text-light-100;
+@layer components {
+    .btn-primary {
+        @apply bg-primary text-white rounded-4xl cursor-pointer transition-all duration-150;
     }
 }

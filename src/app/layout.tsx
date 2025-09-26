@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import PageLayout from '@/components/layout'
 
 export const metadata: Metadata = {
     title: 'Bailwithflow',
@@ -15,7 +16,9 @@ export default function RootLayout({
         <html
             lang="en"
             className="light">
-            <body className={`antialiased`}>{children}</body>
+            <body className={`antialiased`}>
+                <PageLayout>{children}</PageLayout>
+            </body>
         </html>
     )
 }
