@@ -16,10 +16,10 @@ import {
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
 import { navConfig } from '@/constants/uiConstants'
-import { NavItem } from '@/types/ui'
+import { LinkItem } from '@/types/ui'
 
 interface NavLinkProps {
-    item: NavItem
+    item: LinkItem
     onClick?: () => void
 }
 
@@ -37,7 +37,7 @@ function NavLink({ item, onClick }: NavLinkProps) {
 }
 
 interface NavDropdownProps {
-    item: NavItem
+    item: LinkItem
     onClick?: () => void
 }
 
@@ -76,12 +76,12 @@ function NavDropdown({ item, onClick }: NavDropdownProps) {
     )
 }
 
-interface NavItemRendererProps {
-    item: NavItem
+interface LinkItemRendererProps {
+    item: LinkItem
     onClick?: () => void
 }
 
-function NavItemRenderer({ item, onClick }: NavItemRendererProps) {
+function LinkItemRenderer({ item, onClick }: LinkItemRendererProps) {
     if (item.children && item.children.length > 0) {
         return (
             <NavigationMenuItem>
@@ -103,7 +103,7 @@ function NavItemRenderer({ item, onClick }: NavItemRendererProps) {
     )
 }
 
-function MobileNavItemRenderer({ item, onClick }: NavItemRendererProps) {
+function MobileLinkItemRenderer({ item, onClick }: LinkItemRendererProps) {
     if (item.children && item.children.length > 0) {
         return (
             <div className="py-2">
@@ -152,55 +152,57 @@ export function Navbar() {
     const handleClose = () => setIsOpen(false)
 
     return (
-        <NavigationMenu className="max-w-7xl mx-auto">
-            <div className="w-full flex items-center justify-between p-4">
-                <Link href="/">
-                    <Image
-                        src="/assets/logo.svg"
-                        alt="website logo"
-                        width={300}
-                        height={50}
-                        className="w-[165px] h-auto object-cover overflow-hidden"
-                    />
-                </Link>
-
-                {/* Desktop Navigation */}
-                <NavigationMenuList className="relative hidden md:flex">
-                    {navConfig.map(item => (
-                        <NavItemRenderer
-                            key={item.href}
-                            item={item}
+        <NavigationMenu className="max-w-full sticky top-0 bg-background">
+            <div className="max-w-7xl mx-auto w-full">
+                <div className="w-full flex items-center justify-between p-4">
+                    <Link href="/">
+                        <Image
+                            src="/assets/logo.svg"
+                            alt="website logo"
+                            width={300}
+                            height={50}
+                            className="w-[165px] h-auto object-cover overflow-hidden"
                         />
-                    ))}
-                    <Button className="hidden md:block rounded-2xl">Book a Call</Button>
-                </NavigationMenuList>
+                    </Link>
 
-                {/* Mobile Navigation */}
-                <Sheet
-                    open={isOpen}
-                    onOpenChange={setIsOpen}>
-                    <SheetTrigger
-                        asChild
-                        className="md:hidden">
-                        <Button size="icon">
-                            <Menu className="h-6 w-6" />
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent
-                        side="top"
-                        className="w-full h-auto pt-20">
-                        <div className="flex flex-col space-y-4">
-                            {navConfig.map(item => (
-                                <MobileNavItemRenderer
-                                    key={item.href}
-                                    item={item}
-                                    onClick={handleClose}
-                                />
-                            ))}
-                            <Button className="w-full rounded-2xl">Book a Call</Button>
-                        </div>
-                    </SheetContent>
-                </Sheet>
+                    {/* Desktop Navigation */}
+                    <NavigationMenuList className="relative hidden md:flex">
+                        {navConfig.map(item => (
+                            <LinkItemRenderer
+                                key={item.href}
+                                item={item}
+                            />
+                        ))}
+                        <Button className="hidden md:block">Book a Call</Button>
+                    </NavigationMenuList>
+
+                    {/* Mobile Navigation */}
+                    <Sheet
+                        open={isOpen}
+                        onOpenChange={setIsOpen}>
+                        <SheetTrigger
+                            asChild
+                            className="md:hidden">
+                            <Button size="icon">
+                                <Menu className="h-6 w-6" />
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent
+                            side="top"
+                            className="w-full h-auto pt-20">
+                            <div className="flex flex-col space-y-4">
+                                {navConfig.map(item => (
+                                    <MobileLinkItemRenderer
+                                        key={item.href}
+                                        item={item}
+                                        onClick={handleClose}
+                                    />
+                                ))}
+                                <Button className="w-full">Book a Call</Button>
+                            </div>
+                        </SheetContent>
+                    </Sheet>
+                </div>
             </div>
         </NavigationMenu>
     )
