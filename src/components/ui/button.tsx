@@ -13,9 +13,10 @@ const buttonVariants = cva(
                 destructive:
                     'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
                 outline:
-                    'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
-                secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary',
+                    'border border-white bg-white/20 text-white shadow-sm hover:bg-white hover:text-accent-foreground',
+                secondary: 'bg-secondary text-white shadow-sm hover:bg-secondary/90',
                 ghost: 'hover:bg-accent hover:text-accent-foreground',
+                info: 'bg-white text-black/95 hover:bg-white/90 hover:text-black',
                 link: 'text-primary underline-offset-4 hover:underline',
             },
             size: {
@@ -36,14 +37,18 @@ export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
         VariantProps<typeof buttonVariants> {
     asChild?: boolean
+    showArrow?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, size, asChild = false, ...props }, ref) => {
+    ({ className, variant, size, asChild = false, showArrow = false, ...props }, ref) => {
         const Comp = asChild ? Slot : 'button'
         return (
             <Comp
-                className={cn(buttonVariants({ variant, size, className }))}
+                className={cn(
+                    buttonVariants({ variant, size, className }),
+                    showArrow && "after:content-['⟶'] after:text-white after:text-lg"
+                )}
                 ref={ref}
                 {...props}
             />
