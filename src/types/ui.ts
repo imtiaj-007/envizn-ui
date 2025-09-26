@@ -1,4 +1,4 @@
-import { LucideIcon } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 export interface LinkItem {
     title: string
@@ -14,4 +14,12 @@ export interface HeroOverviewItem {
     description: string
     className?: string
     image?: string
+}
+
+export interface Testimonial {
+    name: string
+    designation: string
+    image: string
+    quote: string
+    rating: number
 }
