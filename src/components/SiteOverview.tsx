@@ -3,19 +3,22 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { BookingForm } from '@/components/forms/BookingForm'
 import { StickySection } from '@/components/layout/StickyWrapper'
 import OfferingsSection from '@/components/OfferingsSection'
+import UserExperiences from '@/components/UserExperiences'
 
 function DashedSeparator() {
     return (
-        <div
-            role="none"
-            className="shrink-0 w-full flex gap-2 justify-center overflow-hidden">
-            {Array.from({ length: 30 }, (_, i) => (
-                <span
-                    key={i}
-                    className="w-4 h-0.5 bg-border"
-                    aria-hidden="true"
-                />
-            ))}
+        <div className="relative w-full h-0.5 overflow-hidden">
+            <div
+                role="none"
+                className="absolute left-0 top-0 w-[768px] md:w-[1024px] lg:w-[1440px] flex gap-2 justify-start">
+                {Array.from({ length: 35 }, (_, i) => (
+                    <span
+                        key={i}
+                        className="w-4 h-0.5 bg-border"
+                        aria-hidden="true"
+                    />
+                ))}
+            </div>
         </div>
     )
 }
@@ -25,6 +28,8 @@ const ContentSections: React.FC = () => {
     return (
         <>
             <OfferingsSection />
+            <DashedSeparator />
+            <UserExperiences />
             <DashedSeparator />
         </>
     )

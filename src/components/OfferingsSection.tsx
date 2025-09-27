@@ -4,7 +4,7 @@ import { offeringsData } from '@/constants/uiConstants'
 const OfferingsSection: React.FC = () => {
     return (
         <section
-            className="relative flex flex-col gap-8 w-full p-8 md:p-12 lg:p-16"
+            className="relative flex flex-col gap-8 w-full py-8 md:py-12 lg:py-16"
             aria-labelledby="offerings-heading">
             <h2
                 id="offerings-heading"

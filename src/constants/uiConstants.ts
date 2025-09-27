@@ -124,6 +124,14 @@ export const heroOverview: HeroOverviewItem[] = [
     },
 ]
 
+export const experiencesData: Pick<Comparison, 'title' | 'image'>[] = [
+    { title: 'Balinese Day with a local family', image: '/assets/images/featured-3.jpg' },
+    { title: 'Visit a local temple', image: '/assets/images/bento-image-3.png' },
+    { title: 'Balinese Healing in Retreat', image: '/assets/images/featured-2.jpg' },
+    { title: 'Sunset Dinner at Jimbaran Bay', image: '/assets/images/bento-image-6.png' },
+    { title: 'Ubud Rice Terrace Cycling', image: '/assets/images/bento-image-1.png' },
+]
+
 export const testimonials: Testimonial[] = [
     {
         name: 'Emily & Josh',

@@ -84,7 +84,7 @@ interface LinkItemRendererProps {
 function LinkItemRenderer({ item, onClick }: LinkItemRendererProps) {
     if (item.children && item.children.length > 0) {
         return (
-            <NavigationMenuItem>
+            <NavigationMenuItem className="m-0">
                 <NavDropdown
                     item={item}
                     onClick={onClick}
@@ -94,7 +94,7 @@ function LinkItemRenderer({ item, onClick }: LinkItemRendererProps) {
     }
 
     return (
-        <NavigationMenuItem>
+        <NavigationMenuItem className="m-0">
             <NavLink
                 item={item}
                 onClick={onClick}
@@ -166,7 +166,7 @@ export function Navbar() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <NavigationMenuList className="relative hidden md:flex">
+                    <NavigationMenuList className="relative hidden md:flex md:gap-1 lg:gap-2">
                         {navConfig.map(item => (
                             <LinkItemRenderer
                                 key={item.href}
