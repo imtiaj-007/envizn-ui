@@ -6,7 +6,6 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import Image from 'next/image'
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -187,16 +186,16 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
                 variant={variant}
                 size={size}
                 className={cn(
-                    'absolute  h-8 w-8 rounded-full [&_svg]:size-6 after:content-[""] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-12 after:h-0.5 after:bg-primary',
+                    'group absolute h-8 w-8 rounded-full after:content-[""] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-12 after:h-0.5 after:bg-primary transition-colors',
                     orientation === 'horizontal'
-                        ? 'left-0 -bottom-20 w-20 h-10 bg-transparent border-2 border-primary'
+                        ? 'left-0 -bottom-20 w-20 h-10 bg-transparent border-2 border-primary hover:bg-primary'
                         : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
                     className
                 )}
                 disabled={!canScrollPrev}
                 onClick={scrollPrev}
                 {...props}>
-                <ArrowLeft className="size-5 text-primary mr-4" />
+                <ArrowLeft className="size-4 text-primary group-hover:text-white transition-colors mr-4 z-2" />
                 <span className="sr-only">Previous slide</span>
             </Button>
         )
@@ -214,16 +213,16 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
                 variant={variant}
                 size={size}
                 className={cn(
-                    'absolute h-8 w-8 rounded-full [&_svg]:size-6 after:content-[""] after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:w-12 after:h-0.5 after:bg-primary',
+                    'group absolute h-8 w-8 rounded-full after:content-[""] after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:w-12 after:h-0.5 after:bg-primary transition-colors',
                     orientation === 'horizontal'
-                        ? 'left-24 -bottom-20 w-20 h-10 bg-transparent border-2 border-primary'
+                        ? 'left-24 -bottom-20 w-20 h-10 bg-transparent border-2 border-primary hover:bg-primary'
                         : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
                     className
                 )}
                 disabled={!canScrollNext}
                 onClick={scrollNext}
                 {...props}>
-                <ArrowRight className="text-primary ml-4" />
+                <ArrowRight className="size-4 text-primary group-hover:text-white transition-colors ml-4 z-2" />
                 <span className="sr-only">Next slide</span>
             </Button>
         )

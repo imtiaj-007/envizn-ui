@@ -23,3 +23,14 @@ export interface Testimonial {
     quote: string
     rating: number
 }
+
+export interface Comparison {
+    title: string
+    subTitle: string
+    description: string
+    image: string
+    location: string
+    duration: string
+    type: 'Private' | 'Group' | 'Private/Group'
+    rating?: number
+}

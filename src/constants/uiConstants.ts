@@ -1,6 +1,6 @@
 import { Building2, Clock, Earth, MapPin, Users } from 'lucide-react'
 import type { BentoImageItem } from '@/components/ui/bento-grid'
-import type { HeroOverviewItem, LinkItem, Testimonial } from '@/types/ui'
+import type { Comparison, HeroOverviewItem, LinkItem, Testimonial } from '@/types/ui'
 
 export const navConfig: LinkItem[] = [
     {
@@ -159,6 +159,59 @@ export const testimonials: Testimonial[] = [
         image: '/assets/testimonials/user-5.png',
         quote: "“Traveling with kids can be stressful, but Flora made it effortless. The family-friendly activities were perfectly paced, and our children absolutely loved the traditional Balinese cooking class. Memories we'll cherish forever!”",
         rating: 5,
+    },
+]
+
+export const comparisonData: Comparison[] = [
+    {
+        title: 'Surf in Canggu',
+        subTitle: 'From IDR 35,00,000.00/ person',
+        description:
+            "Wake up, grab your board and head to the beach while it's still quiet. This is your moment to catch your first wave — and do it with someone who knows these waters by heart.",
+        location: 'Cangu',
+        duration: 'Half Day Trip',
+        type: 'Group',
+        image: '/assets/images/featured-1.jpg',
+    },
+    {
+        title: 'Balinese Healing in Retreat',
+        subTitle: 'From IDR 60,00,000.00/ person',
+        description:
+            "You know that moment when you realise you've been carrying too much — in your body, your head, your heart? This is the kind of space that helps you let go. 'Where can I do a real Balinese energy healing session that actually feels authentic?'",
+        location: 'Cangu',
+        duration: 'Half Day Trip',
+        type: 'Private/Group',
+        image: '/assets/images/featured-2.jpg',
+    },
+    {
+        title: 'Balinese Day with a local family',
+        subTitle: 'From IDR 15,00,000.00/ person',
+        description:
+            "Slow down. Watch the light move across the rice fields. Learn how to make coconut oil the way it's been done for generations. This is Bali with soul — the part you don't find in guidebooks. 'How can I connect with locals without it feeling forced or touristy?'",
+        location: 'Cangu',
+        duration: 'Full Day Trip',
+        type: 'Private',
+        image: '/assets/images/featured-3.jpg',
+    },
+    {
+        title: 'Ubud Rice Terrace Cycling',
+        subTitle: 'From IDR 25,00,000.00/ person',
+        description:
+            'Cycle through the lush green rice terraces of Ubud, stopping at local villages and traditional markets. Experience the authentic rural life of Bali while enjoying the fresh air and stunning landscapes. Perfect for nature lovers and adventure seekers.',
+        location: 'Ubud',
+        duration: 'Full Day Trip',
+        type: 'Group',
+        image: '/assets/images/featured-4.jpg',
+    },
+    {
+        title: 'Sunset Dinner at Jimbaran Bay',
+        subTitle: 'From IDR 45,00,000.00/ person',
+        description:
+            "Enjoy a romantic seafood dinner right on the beach as the sun sets over Jimbaran Bay. Fresh grilled fish, traditional Balinese dishes, and the sound of waves create an unforgettable dining experience. 'Where can I have the most memorable sunset dinner in Bali?'",
+        location: 'Jimbaran',
+        duration: 'Evening Trip',
+        type: 'Private/Group',
+        image: '/assets/images/featured-5.jpg',
     },
 ]
 
