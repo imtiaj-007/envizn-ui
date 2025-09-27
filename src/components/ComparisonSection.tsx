@@ -34,9 +34,7 @@ function ComparisonCard({ data }: { data: Comparison }) {
                     className="flex items-center gap-2 mb-4"
                     role="group"
                     aria-label="Trip details">
-                    <Badge
-                        className="rounded-full px-3 py-1.5 font-normal"
-                        aria-label={`Location: ${data.location}`}>
+                    <Badge aria-label={`Location: ${data.location}`}>
                         <MapPin
                             className="size-4"
                             aria-hidden="true"
@@ -45,7 +43,6 @@ function ComparisonCard({ data }: { data: Comparison }) {
                     </Badge>
                     <Badge
                         variant="accent"
-                        className="rounded-full px-3 py-1.5 font-normal"
                         aria-label={`Duration: ${data.duration}`}>
                         <Clock
                             className="size-4"
@@ -55,7 +52,6 @@ function ComparisonCard({ data }: { data: Comparison }) {
                     </Badge>
                     <Badge
                         variant="secondary-light"
-                        className="rounded-full px-3 py-1.5 font-normal"
                         aria-label={`Type: ${data.type}`}>
                         {data.type}
                     </Badge>

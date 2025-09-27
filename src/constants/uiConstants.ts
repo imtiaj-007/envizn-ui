@@ -1,6 +1,6 @@
-import { Building2, Clock, Earth, MapPin, Users } from 'lucide-react'
+import { Building2, Clock, Compass, Earth, Gem, Heart, Leaf, MapPin, Users } from 'lucide-react'
 import type { BentoImageItem } from '@/components/ui/bento-grid'
-import type { Comparison, HeroOverviewItem, LinkItem, Testimonial } from '@/types/ui'
+import type { Comparison, HeroOverviewItem, LinkItem, OfferingItem, Testimonial } from '@/types/ui'
 
 export const navConfig: LinkItem[] = [
     {
@@ -212,6 +212,51 @@ export const comparisonData: Comparison[] = [
         duration: 'Evening Trip',
         type: 'Private/Group',
         image: '/assets/images/featured-5.jpg',
+    },
+]
+
+export const offeringsData: OfferingItem[] = [
+    {
+        key: 'offerings-1',
+        text: 'Walk through the rice fields with Tiwi',
+        icon: Gem,
+        type: 'regular',
+    },
+    {
+        key: 'offerings-2',
+        text: 'Learn how to make offerings & coconut oil',
+        icon: Leaf,
+        type: 'regular',
+    },
+    {
+        key: 'offerings-3',
+        text: 'Cook & enjoy an authentic Balinese lunch',
+        icon: Heart,
+        type: 'regular',
+    },
+    {
+        key: 'offerings-4',
+        text: 'Option to stay overnight in the family home',
+        icon: Compass,
+        type: 'regular',
+    },
+    {
+        key: 'offerings-5',
+        text: 'Village near Ubud',
+        icon: MapPin,
+        type: 'badge',
+    },
+    {
+        key: 'offerings-6',
+        text: '9am - 12am',
+        icon: Clock,
+        type: 'badge',
+    },
+    {
+        key: 'offerings-7',
+        text: 'Private',
+        icon: Building2,
+        type: 'badge',
     },
 ]
 

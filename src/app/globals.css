@@ -229,6 +229,10 @@ body {
     h3 {
         @apply text-lg md:text-2xl lg:text-2xl font-bold leading-[1.2];
     }
+
+    li {
+        @apply flex items-center gap-4 mb-2;
+    }
 }
 
 @layer components {

@@ -34,3 +34,10 @@ export interface Comparison {
     type: 'Private' | 'Group' | 'Private/Group'
     rating?: number
 }
+
+export interface OfferingItem {
+    key: string
+    text: string
+    icon: LucideIcon
+    type: 'regular' | 'badge'
+}
