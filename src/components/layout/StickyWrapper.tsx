@@ -9,7 +9,11 @@ interface StickyWrapperProps {
 
 export const StickyWrapper: React.FC<StickyWrapperProps> = ({ children, className = '' }) => {
     return (
-        <div className={cn('relative w-full min-h-screen bg-white p-8 md:p-12 lg:p-16', className)}>
+        <div
+            className={cn(
+                'relative w-full min-h-screen bg-(--background-secondary) p-8 md:p-12 lg:p-16',
+                className
+            )}>
             <div className="max-w-7xl mx-auto">{children}</div>
         </div>
     )

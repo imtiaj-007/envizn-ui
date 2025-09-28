@@ -93,6 +93,7 @@
     --radius: 0.625rem;
     --background: #fff3e5;
     --foreground: #000000;
+    --background-secondary: #f8f8f7;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
@@ -238,6 +239,24 @@ body {
 @layer components {
     .btn-primary {
         @apply bg-primary text-white rounded-4xl cursor-pointer transition-all duration-150;
+    }
+
+    .rdp-root {
+        @apply bg-white w-[22rem] flex items-center justify-center p-6 rounded-lg;
+    }
+
+    .rdp-caption_label {
+        @apply text-base text-[#6B7897] font-medium;
+    }
+
+    .rdp-day,
+    .rdp-weekday,
+    .rdp-day_button {
+        @apply text-[#6B7897] text-sm rounded-full;
+    }
+
+    .rdp-day {
+        @apply hover:bg-secondary hover:text-white;
     }
 }
 

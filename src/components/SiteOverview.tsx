@@ -2,8 +2,11 @@ import { Star } from 'lucide-react'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { BookingForm } from '@/components/forms/BookingForm'
 import { StickySection } from '@/components/layout/StickyWrapper'
+
 import OfferingsSection from '@/components/OfferingsSection'
 import UserExperiences from '@/components/UserExperiences'
+import DiscoverSection from '@/components/DiscoverSection'
+import BookAppointment from '@/components/BookAppointment'
 
 function DashedSeparator() {
     return (
@@ -30,6 +33,10 @@ const ContentSections: React.FC = () => {
             <OfferingsSection />
             <DashedSeparator />
             <UserExperiences />
+            <DashedSeparator />
+            <DiscoverSection />
+            <DashedSeparator />
+            <BookAppointment />
             <DashedSeparator />
         </>
     )
