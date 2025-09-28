@@ -7,6 +7,7 @@ import OfferingsSection from '@/components/OfferingsSection'
 import UserExperiences from '@/components/UserExperiences'
 import DiscoverSection from '@/components/DiscoverSection'
 import BookAppointment from '@/components/BookAppointment'
+import FAQSection from '@/components/FAQSection'
 
 function DashedSeparator() {
     return (
@@ -38,6 +39,7 @@ const ContentSections: React.FC = () => {
             <DashedSeparator />
             <BookAppointment />
             <DashedSeparator />
+            <FAQSection />
         </>
     )
 }

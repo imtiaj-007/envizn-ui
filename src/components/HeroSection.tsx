@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
     return (
         <section
             id="hero-section"
-            className="flex flex-col items-center gap-16 p-8 md:p-12 lg:p-16"
+            className="flex flex-col items-center gap-16 p-6 md:p-12 lg:p-16"
             aria-labelledby="hero-heading">
             <div className="relative w-full h-[400px]">
                 <div className="absolute bottom-4 right-2 z-5">

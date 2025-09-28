@@ -36,7 +36,7 @@ function DatePicker({ selected, onSelect }: DatePickerProps) {
 const availableSlots: string[] = ['9 am - 12 am']
 
 const BookAppointment: React.FC = () => {
-    const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date())
+    const [selectedDate, setSelectedDate] = useState<Date | undefined>()
 
     return (
         <section

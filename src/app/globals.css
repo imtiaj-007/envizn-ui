@@ -242,7 +242,7 @@ body {
     }
 
     .rdp-root {
-        @apply bg-white w-[22rem] flex items-center justify-center p-6 rounded-lg;
+        @apply bg-white w-[345px] md:w-[22rem] flex items-center justify-center p-6 rounded-lg;
     }
 
     .rdp-caption_label {

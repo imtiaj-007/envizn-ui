@@ -37,7 +37,7 @@ const OfferingsSection: React.FC = () => {
                     return (
                         <li key={item.key}>
                             <IconComponent
-                                className="size-4 text-secondary"
+                                className="size-2.5 md:size-4 text-secondary"
                                 aria-hidden="true"
                             />
                             <span>{item.text}</span>
